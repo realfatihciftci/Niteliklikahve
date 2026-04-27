@@ -17,4 +17,6 @@ public class Equipment
     [Required(ErrorMessage = "Değirmen adı zorunludur.")]
     [MaxLength(150, ErrorMessage = "Değirmen adı en fazla 150 karakter olabilir.")]
     public string GrinderName { get; set; }
+    
+    public ICollection<Recipe> Recipes { get; set; }
 }
