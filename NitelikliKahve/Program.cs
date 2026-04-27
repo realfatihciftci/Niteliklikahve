@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using NitelikliKahve.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext'i ve SQLite bağlantısını servis koleksiyonuna ekle.
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
