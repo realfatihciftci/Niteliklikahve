@@ -1,0 +1,31 @@
+@model NitelikliKahve.Models.Equipment
+
+@{
+    ViewData["Title"] = "Create Equipment";
+}
+
+<h1>Create Equipment</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="MachineName" class="control-label"></label>
+        <input asp-for="MachineName" class="form-control" />
+        <span asp-validation-for="MachineName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PortafilterType" class="control-label"></label>
+        <input asp-for="PortafilterType" class="form-control" />
+        <span asp-validation-for="PortafilterType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GrinderName" class="control-label"></label>
+        <input asp-for="GrinderName" class="form-control" />
+        <span asp-validation-for="GrinderName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
