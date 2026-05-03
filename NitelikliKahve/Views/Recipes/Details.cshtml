@@ -1,0 +1,36 @@
+@model NitelikliKahve.Models.Recipe
+
+@{
+    ViewData["Title"] = "Recipe Details";
+}
+
+<h1>Details</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">Id</dt>
+    <dd class="col-sm-10">@Model.Id</dd>
+
+    <dt class="col-sm-2">Coffee</dt>
+    <dd class="col-sm-10">@Model.CoffeeBean?.Brand - @Model.CoffeeBean?.Origin</dd>
+
+    <dt class="col-sm-2">Equipment</dt>
+    <dd class="col-sm-10">@Model.Equipment?.MachineName</dd>
+
+    <dt class="col-sm-2">Dose</dt>
+    <dd class="col-sm-10">@Model.Dose</dd>
+
+    <dt class="col-sm-2">Yield</dt>
+    <dd class="col-sm-10">@Model.Yield</dd>
+
+    <dt class="col-sm-2">BrewTime</dt>
+    <dd class="col-sm-10">@Model.BrewTime</dd>
+
+    <dt class="col-sm-2">Rating</dt>
+    <dd class="col-sm-10">@Model.Rating</dd>
+
+    <dt class="col-sm-2">Notes</dt>
+    <dd class="col-sm-10">@Model.Notes</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

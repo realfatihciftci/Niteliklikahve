@@ -1,0 +1,43 @@
+@model IEnumerable<NitelikliKahve.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Recipes";
+}
+
+<h1>Recipes</h1>
+
+<p><a class="btn btn-primary" asp-action="Create">Create New</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Coffee</th>
+            <th>Equipment</th>
+            <th>Dose</th>
+            <th>Yield</th>
+            <th>BrewTime</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.CoffeeBean?.Brand - @item.CoffeeBean?.Origin</td>
+            <td>@item.Equipment?.MachineName</td>
+            <td>@item.Dose</td>
+            <td>@item.Yield</td>
+            <td>@item.BrewTime</td>
+            <td>@item.Rating</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
