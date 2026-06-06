@@ -18,5 +18,5 @@ public class Equipment
     [MaxLength(150, ErrorMessage = "Değirmen adı en fazla 150 karakter olabilir.")]
     public string GrinderName { get; set; }
     
-    public ICollection<Recipe> Recipes { get; set; }
+    public virtual ICollection<Recipe>? Recipes { get; set; } = new List<Recipe>();
 }

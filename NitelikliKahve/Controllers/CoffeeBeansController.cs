@@ -28,6 +28,7 @@ public class CoffeeBeansController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(CoffeeBean coffeeBean)
     {
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             _context.Add(coffeeBean);
@@ -58,6 +59,7 @@ public class CoffeeBeansController : Controller
     public async Task<IActionResult> Edit(int id, CoffeeBean coffeeBean)
     {
         if (id != coffeeBean.Id) return NotFound();
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             try

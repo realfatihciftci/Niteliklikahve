@@ -28,6 +28,7 @@ public class EquipmentsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Equipment equipment)
     {
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             _context.Add(equipment);
@@ -58,6 +59,7 @@ public class EquipmentsController : Controller
     public async Task<IActionResult> Edit(int id, Equipment equipment)
     {
         if (id != equipment.Id) return NotFound();
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             try

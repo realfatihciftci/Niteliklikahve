@@ -57,6 +57,7 @@ public class RecipesController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(Recipe recipe)
     {
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             _context.Add(recipe);
@@ -81,6 +82,7 @@ public class RecipesController : Controller
     public async Task<IActionResult> Edit(int id, Recipe recipe)
     {
         if (id != recipe.Id) return NotFound();
+        ModelState.ClearValidationState(nameof(Recipe));
         if (ModelState.IsValid)
         {
             try

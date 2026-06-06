@@ -17,5 +17,5 @@ public class CoffeeBean
     [MaxLength(25, ErrorMessage = "Kavrum derecesi en fazla 25 karakter olabilir.")]
     public string RoastLevel { get; set; }
     
-    public ICollection<Recipe> Recipes { get; set; }
+    public virtual ICollection<Recipe>? Recipes { get; set; } = new List<Recipe>();
 }

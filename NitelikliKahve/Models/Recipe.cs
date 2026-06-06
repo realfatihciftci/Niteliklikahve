@@ -23,15 +23,15 @@ public class Recipe
     public int Rating { get; set; }
     
     [MaxLength(500, ErrorMessage = "Notlar en fazla 500 karakter olabilir.")]
-    public string Notes { get; set; }
+    public string? Notes { get; set; }
     
     public int CoffeeBeanId { get; set; }
     
     [ForeignKey("CoffeeBeanId")]
-    public CoffeeBean CoffeeBean { get; set; }
+    public virtual CoffeeBean? CoffeeBean { get; set; }
     
     public int EquipmentId { get; set; }
     
     [ForeignKey("EquipmentId")]
-    public Equipment Equipment { get; set; }
+    public virtual Equipment? Equipment { get; set; }
 }
