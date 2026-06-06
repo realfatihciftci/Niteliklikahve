@@ -1,8 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Kahve Demleme Günlüğü";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h1 class="card-title display-5">Kahve Demleme Günlüğünüze Hoş Geldiniz</h1>
+                    <p class="text-muted mt-3 mb-4">Deneyimlerinizi kaydedin, ekipman ve çekirdek bilgilerinizi takip edin, en sevdiğiniz demlemeleri tekrar üretin.</p>
+
+                    <div class="d-flex justify-content-center gap-2">
+                        <a asp-controller="CoffeeBeans" asp-action="Create" class="btn btn-dark btn-lg m-2">Çekirdek Ekle</a>
+                        <a asp-controller="Equipments" asp-action="Create" class="btn btn-primary btn-lg m-2">Ekipman Ekle</a>
+                        <a asp-controller="Recipes" asp-action="Create" class="btn btn-success btn-lg m-2">Yeni Reçete Yaz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
