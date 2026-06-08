@@ -34,3 +34,21 @@
 
 <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
 <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+@{
+    decimal? cost = null;
+    if (Model.CoffeeBean != null && Model.CoffeeBean.PackageWeight > 0)
+    {
+        cost = (Model.CoffeeBean.Price / Model.CoffeeBean.PackageWeight) * (decimal)Model.Dose;
+    }
+}
+
+@if (cost != null)
+{
+    <div class="card mt-3" style="max-width:380px;">
+        <div class="card-body">
+            <h6 class="card-title">Bu Fincanın Maliyeti</h6>
+            <p class="card-text"><span class="badge bg-success">@cost.Value.ToString("F2") TL</span></p>
+        </div>
+    </div>
+}
